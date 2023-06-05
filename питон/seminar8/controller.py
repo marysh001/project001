@@ -14,11 +14,11 @@ elif ask == 3:
 name = view.search()
 database.search_name(name)
 elif ask == 3:
-database.sort_datab_name()
+database.sort_datab_name(name)
 elif ask == 4:
-database.delete_datab_name()
+database.delete_datab_name(name)
 elif ask == 5:
-database.change_datab_name()
+database.change_datab_name(name)
 break
 
             
