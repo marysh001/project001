@@ -1,6 +1,6 @@
 package family_tree;
 
-public class Human implements Comparable{
+public class Human implements Iterator{
     private String name;
     private Gender gender;
     private LocalDate birthdate;
@@ -17,10 +17,11 @@ public class Human implements Comparable{
         this.birthDate = birthDate;
         this.deathDate = deathDate;
 
-        Iterator<String> components = human;
-        while(componets.hasNext()){
-            System.out.println(human.next());
+        Iterator<Human> iterator = age;
+        while(iterator.hasNext()){
+            System.out.println(age.next());
         }
+        Iterator<Human> iterator =  age.iterator();
 
         parents = new ArrayList<>();
         if (father != null){
@@ -155,6 +156,18 @@ db.sort(human1.gender, human2.gender);
 Collections.sort(db);
 ArrayList.sort();
 
+@Override
+public String next()
+switch(index){
+    case 1:
+        return String.format("Name: %s", Name);
+          case 2:
+        return String.format("Gender: %s", Gender)
+          case 3:
+        return String.format("Age: %s", Age)
+         default:
+        return String.format("Name: %s", Name)
+}
 
 @Override
 
