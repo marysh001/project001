@@ -1,6 +1,6 @@
 package family_tree;
 
-public class Human implements Iterator{
+public class Member<E> implements Iterator{
     private String name;
     private Gender gender;
     private LocalDate birthdate;
@@ -10,7 +10,7 @@ public class Human implements Iterator{
     private Human spouse;
 
 
-    public Human (String name, Gender gender, LocalDate birthdate,
+    public Member (String name, Gender gender, LocalDate birthdate,
      LocalDate deathdate, Human father, Human mother) {
         this.name = name;
         this.gender = gender;
