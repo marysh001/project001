@@ -1,58 +1,53 @@
 package family_tree;
 
+import family_tree.human.Human;
+
+import java.util.Iterator;
+import java.util.List;
+
+public class HumanIterator implements Iterator <Human>{
+    private int index;
+    private List<Human> humanList;
+
+    public HumanIterator(List<Human> humanList){
+        this.humanList = humanList;
+    }
+
+    @Override
+    public boolean hasNext() { return index < humanList.size();}
+    @Override 
+    public Human next() {return humanList.get(index++);}
+}
+
 public class FamilyTree {
     private list<Human> humanList;
 
     public FamilyTree (List<Human> humanList)
     this.humanList = humanList;
+
+StringBuilder sb = new StringBuilder();
+sb.append("В дереве");
+sb.append(humanList.size());
+sb.append("объектов: \n");
+for (Human human: humanList){
+    sb.append(human);
+    sb.append("\n");
 }
- 
-public FamilyTree() {this (new ArrayList<>()); }
-public boolean add(Human human){
-    if (human == null){
-        return false;
-    }
 
-    if (!humanList.contains(human)){
-        humanList.add(human);
-
-        addToParents(human);
-        addToChildren(human);
-
-        return true;
-    }
-    return false;
-
-    private void addToParents(Human human){
-        for (Human parent: human.getParents()){
-            parent.addChild(human);
-        }
-    }
-
-    private void addToChildren(Human human){
-        for (Human child: human.getChildren()){
-            child.addParent(human);
-        }
-    }
-
-    public Human getByName(String name){
-        for (Human human: humanList){
-            if (human.getName().equals(name)){
-                return human;
-            }
-        }
-        return null;
-    }
-
-    public String getInfo(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("в дереве ");
-        sb.append(humanList.size());
-        sb.append("объектов \n ");
-        for (Human human: humanList){
-            sb.append(human.getInfo());
-            sb.append("\n");
-        }
 return sb.toString();
-    }
+
+@Override
+public String toString() {return getInfo();}
+
+@Override
+public Iterator <Human> Iterator() {return new HumanIterator(HumanList);}
+
+public void sortByName(){
+    humanList.sort(new HumanComparatorByName());
 }
+
+public void sortByBirthDate() { humanList.sort (new HumanComporatorByBirthDate());}
+}
+
+
+

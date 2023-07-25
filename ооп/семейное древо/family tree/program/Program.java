@@ -21,21 +21,4 @@ public class Program {
             System.out.println(ex.getMessage());
         } 
     } 
-ParameterizedMember<Integer> m1 = new ParameterizedMember<Integer>(
-    id: 1997,
-    age:
-    gender:
-    name:
-    birthDate:
-    deathDate:);
-System.out.println(m1.getId());
-
-String uid = UUID.randomUUID().toString();
-ParameterizedMember<String> m2 = new ParameterizedMember<>(uid,  age:
-    gender:
-    name:
-    birthDate:
-    deathDate:);
-System.out.println(m2.getId());
-
 }

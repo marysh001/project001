@@ -10,18 +10,12 @@ public class Member<E> implements Iterator{
     private Human spouse;
 
 
-    public Member (String name, Gender gender, LocalDate birthdate,
+    public Human (String name, Gender gender, LocalDate birthdate,
      LocalDate deathdate, Human father, Human mother) {
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
-
-        Iterator<Human> iterator = age;
-        while(iterator.hasNext()){
-            System.out.println(age.next());
-        }
-        Iterator<Human> iterator =  age.iterator();
 
         parents = new ArrayList<>();
         if (father != null){
@@ -150,53 +144,5 @@ private int getPeriod(LocalDate birthDate, Localdate deathDate){
     Period diff = Period.between(birthDate, deathDate);
     return diff.getYears();
 }
-@Override
-db.sort(newGenderComparator());
-db.sort(human1.gender, human2.gender);
-Collections.sort(db);
-ArrayList.sort();
 
-@Override
-public String next()
-switch(index){
-    case 1:
-        return String.format("Name: %s", Name);
-          case 2:
-        return String.format("Gender: %s", Gender)
-          case 3:
-        return String.format("Age: %s", Age)
-         default:
-        return String.format("Name: %s", Name)
 }
-
-@Override
-
-int index;
-
-public boolean hasNext(){
-    return index ++ <4
-};
-
-
-@Override
-
-public int;
-compareTo(Human o)
-{if (this.age> o.age) 
-return -1 
-System.out("Старший в семье" -1);
-else
-return 0;}
-
-public boolean equals (Object obj) {
-    if (this == obj) {
-        return true;
-    }
-    if (!(obj instanceof Human)){
-        return false;
-    }
-    Human human = (Human) obj;
-    return human.getname().equals(getname());
-}
-}
-
