@@ -1,8 +1,8 @@
 package presenter;
 
 import ui.View;
-import weather_api.Service;
-import weather_api.WeatherService;
+import family_api.Service;
+import family_api.FamilyService;
 
 public class Presenter {
 
@@ -11,11 +11,11 @@ public class Presenter {
 
     public Presenter(View view) {
         this.view = view;
-        service = new WeatherService();
+        service = new FamilyService();
     }
 
-    public void getInfo(String city) {
-        String answer = service.get(city);
+    public void getInfo(String name) {
+        String answer = service.get(name);
         view.print(answer);
     }
 }

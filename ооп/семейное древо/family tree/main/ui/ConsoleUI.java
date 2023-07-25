@@ -17,13 +17,13 @@ public class ConsoleUI implements View{
     @Override
     public void start() {
         while (true){
-            String city = scan();
-            presenter.getInfo(city);
+            String name = scan();
+            presenter.getInfo(name);
         }
     }
 
     private String scan() {
-        System.out.println("Введите город");
+        System.out.println("Введите имя");
         return scanner.nextLine();
     }
 
